@@ -1,0 +1,62 @@
+{% extends "!layout.html" %}
+
+{% block extrahead %}
+{{ super() }}
+<!-- Senior/Architect-Level SEO & Search Engine Discovery Meta Tags -->
+<meta name="description" content="{{ title|striptags|e }} — Carbox &amp; CarboxMol (v0.4.5): Macromolecular Crystallography Workbench, Anomalous Carboxyl Protonation, Low-Barrier Hydrogen Bonds (LBHB), and GROMACS 3D Simulation Platform by Suleiman M Hajizadeh &amp; Garib N Murshudov." />
+<meta name="keywords" content="CarboxMol, Carbox, Project Carbox, {{ title|striptags|e }}, Suleiman M Hajizadeh, Süleyman Hacızadə, Garib N Murshudov, Qərib Mürşüdov, Macromolecular Crystallography, Low-Barrier Hydrogen Bond, LBHB, GROMACS Molecular Dynamics, REFMAC5, Servalcat, CCP4, Gemmi, PROPKA, Tukey IQR, Fisher Z RSCC, 3D Molecular Viewer, MRC LMB Cambridge, Western Caspian University, Institute of Molecular Biology" />
+<meta name="author" content="Suleiman M Hajizadeh &amp; Garib N Murshudov" />
+<meta name="creator" content="Suleiman M Hajizadeh &amp; Garib N Murshudov" />
+<meta name="publisher" content="CarboxMol &amp; Project Carbox" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="geo.region" content="AZ-BA" />
+<meta name="geo.placename" content="Baku, Azerbaijan; Cambridge, United Kingdom" />
+
+<!-- Canonical & Multilingual Alternates -->
+<link rel="canonical" href="https://carboxmol.readthedocs.io/en/latest/{{ pagename }}.html" />
+<link rel="alternate" hreflang="en" href="https://carboxmol.readthedocs.io/en/latest/{{ pagename }}.html" />
+<link rel="alternate" hreflang="az" href="https://carboxmol.readthedocs.io/en/latest/{{ pagename }}.html" />
+<link rel="alternate" hreflang="he" href="https://carboxmol.readthedocs.io/en/latest/{{ pagename }}.html" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Carbox &amp; CarboxMol Documentation" />
+<meta property="og:title" content="{{ title|striptags|e }} | Carbox &amp; CarboxMol Documentation (v0.4.5)" />
+<meta property="og:description" content="{{ title|striptags|e }} — Official scientific documentation for Carbox &amp; CarboxMol by Suleiman M Hajizadeh &amp; Garib N Murshudov." />
+<meta property="og:url" content="https://carboxmol.readthedocs.io/en/latest/{{ pagename }}.html" />
+<meta property="og:image" content="https://carboxmol.github.io/assets/carboxmol_logo.png" />
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@SuleimanHajizadeh" />
+<meta name="twitter:title" content="{{ title|striptags|e }} | Carbox &amp; CarboxMol Documentation (v0.4.5)" />
+<meta name="twitter:description" content="{{ title|striptags|e }} — Official scientific documentation for Carbox &amp; CarboxMol by Suleiman M Hajizadeh &amp; Garib N Murshudov." />
+<meta name="twitter:image" content="https://carboxmol.github.io/assets/carboxmol_logo.png" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://carboxmol.readthedocs.io/en/latest/{{ pagename }}.html#article",
+      "headline": "{{ title|striptags|e }} — Carbox & CarboxMol Documentation (v0.4.5)",
+      "name": "{{ title|striptags|e }}",
+      "url": "https://carboxmol.readthedocs.io/en/latest/{{ pagename }}.html",
+      "author": [
+        { "@type": "Person", "name": "Suleiman M Hajizadeh", "url": "https://project-carbox.github.io/" },
+        { "@type": "Person", "name": "Garib N Murshudov", "affiliation": "MRC Laboratory of Molecular Biology (LMB), Cambridge" }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Suleiman M Hajizadeh & Garib N Murshudov",
+        "url": "https://carboxmol.github.io/"
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}

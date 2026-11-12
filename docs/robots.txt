@@ -1,0 +1,8 @@
+# Robots.txt for Read the Docs (CarboxMol Documentation)
+User-agent: *
+Allow: /
+Allow: /en/latest/
+Allow: /_static/
+
+# Sitemap declaration
+Sitemap: https://carboxmol.readthedocs.io/en/latest/sitemap.xml
