@@ -42,6 +42,7 @@ sitemap_url_scheme = '{link}'
 
 # Global metadata for Search Engine Optimization (SEO / Google / Bing / Yandex)
 html_meta = {
+    'google-site-verification': 'med3XHPJzcSjHLpdN-jmNKekn-MFZcQE8IwPeFbCk7o',
     'description': 'Official scientific documentation for CarboxMol & Carbox: Interactive 3D macromolecular crystallography workbench, GROMACS molecular dynamics studio, 2mFo-DFc electron density carving, anomalous carboxyl protonation, and Low-Barrier Hydrogen Bond (LBHB) discovery by Suleiman M Hajizadeh.',
     'keywords': 'CarboxMol, CarboxMol Studio, Carbox, Macromolecular Crystallography, 3D Molecular Viewer, GROMACS MD, Low Barrier Hydrogen Bonds, LBHB, Suleiman Hajizadeh, Garib Murshudov, Servalcat, REFMAC5, PDB validation, carboxyl protonation, pKa shifts, PROPKA, electron density map, 2Fo-Fc, structural biology, bioinformatics',
     'author': 'Suleiman M Hajizadeh',
