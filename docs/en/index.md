@@ -22,7 +22,7 @@
 * **Non-Covalent Interaction Analysis (PLI):** Quantitative detection of salt bridges, $\pi\text{--}\pi$ stacking, cation--$\pi$ interactions, and hydrogen bonding networks.
 * **Real-Space Geometric Refinement:** Torsion-angle and bond-distance regularization with iterative convergence reporting.
 * **GROMACS Molecular Dynamics Suite:** End-to-end automated pipelines for structure topology generation, solvation, ionization, energy minimization (steepest descent / conjugate gradient), NVT/NPT equilibrations, and production MD trajectories.
-* **Carbox Crystallographic Language (CXL):** Scriptable macro execution language for automated, reproducible batch modeling and structure manipulation.
+* **CarboxMol Crystallographic Language (CXL):** Scriptable macro execution language for automated, reproducible batch modeling and structure manipulation.
 * **Headless Terminal CLI & Microservices Server:** Direct command-line utility (`carboxmol`) and local server daemon for structural workflows.
 
 ---
@@ -40,13 +40,13 @@ Structure (PDB/mmCIF Entry, Space Group, Unit Cell)
 ```
 
 ### Module Organization
-* `carboxmol.model`: Core object hierarchy with spatial KD-tree indexing for neighbor searches.
-* `carboxmol.refine`: Real-space geometric refinement and stereochemical regularization engine.
-* `carboxmol.metal`: Polyhedral geometry classifier for metalloprotein active sites.
-* `carboxmol.pli`: Non-covalent protein-ligand and residue-residue contact network analyzer.
-* `carboxmol.cxl`: Interpreter and runtime environment for the `.CXL` scripting language.
+* `carboxmol.core.structure`: Core object hierarchy with spatial KD-tree indexing for neighbor searches.
+* `carboxmol.refinement`: Real-space geometric refinement and stereochemical regularization engine.
+* `carboxmol.modeling.metal`: Polyhedral geometry classifier for metalloprotein active sites.
+* `carboxmol.interactions`: Non-covalent protein-ligand and residue-residue contact network analyzer.
+* `carboxmol.macro`: Interpreter and runtime parser for `.cxl` macro scripts.
 * `carboxmol.density`: Binary CCP4/MRC parser, isocontour surface generator, and map carver.
-* `carboxmol.simulation`: GROMACS pipeline orchestrator and parameter generator.
+* `carboxmol.gromacs`: GROMACS pipeline orchestrator and parameter generator.
 
 ---
 
@@ -99,7 +99,8 @@ carboxmol metal structure.pdb
 
 ---
 
-## 5. Ecosystem & Related Tools
+## 5. Web Studio & Graphical Resources
 
-For algorithmic high-throughput screening of anomalous carboxylate protonation states ($-\text{COOH} \cdots ^-\text{OOC}-$) and low-barrier hydrogen bonds across large structural databases, CarboxMol integrates seamlessly with the pure computational library **Project Carbox**. Complete documentation for the Carbox library is available separately at:
-[https://project-carbox.readthedocs.io/en/latest/](https://project-carbox.readthedocs.io/en/latest/)
+* **Interactive WebGL Studio:** [https://carboxmol.github.io/studio.html](https://carboxmol.github.io/studio.html)
+* **Official Web Portal:** [https://carboxmol.github.io/](https://carboxmol.github.io/)
+* **Source Code Repository:** [https://github.com/carboxmol/carboxmol](https://github.com/carboxmol/carboxmol)

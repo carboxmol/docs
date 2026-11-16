@@ -1,28 +1,32 @@
-# Carbox & CarboxMol Documentation
+# CarboxMol Documentation
 
-Official Scientific and Technical Documentation Repository
+Official Scientific and Technical Documentation Repository for the CarboxMol Structural Biology Platform.
 
-## 1. Author and Scientific Acknowledgment
+## 1. Author and Scientific Direction
 
 * **Suleiman M. Hajizadeh** (Author and Developer): Institute of Molecular Biology, Ministry of Science and Education of the Republic of Azerbaijan; Western Caspian University, Baku, Azerbaijan
-* **Prof. Garib N. Murshudov** (Scientific Inspiration and Theoretical Reference): MRC Laboratory of Molecular Biology (LMB), Cambridge Biomedical Campus, Cambridge, United Kingdom
+* **Prof. Garib N. Murshudov** (Scientific Advisor): MRC Laboratory of Molecular Biology (LMB), Cambridge Biomedical Campus, Cambridge, United Kingdom
 * **Live Documentation (Read the Docs):** [https://carboxmol.readthedocs.io/en/latest/](https://carboxmol.readthedocs.io/en/latest/)
-* **Official Web Portal:** [https://carboxmol.github.io/](https://carboxmol.github.io/)
+* **Official Web Studio:** [https://carboxmol.github.io/studio.html](https://carboxmol.github.io/studio.html)
 * **Primary Contact:** [suleyman.hacizade1@gmail.com](mailto:suleyman.hacizade1@gmail.com)
 
 ## 2. Content Overview
 
-This repository hosts the Sphinx documentation source files (`.rst` and MyST `.md`), structured into:
+This repository hosts the Sphinx documentation source files (`.rst` and MyST `.md`) for **CarboxMol**:
 
 1. **Trilingual Manuals:**
-   * **English:** `docs/en/`
-   * **Azerbaijani:** `docs/az/`
-   * **Hebrew (RTL):** `docs/he/`
-2. **Biophysical Theory:** Anomalous carboxyl protonation (`delta pKa >= +2.0`), low-barrier hydrogen bonds (`LBHB`, `d <= 2.55 A`), and microenvironment dielectric shielding.
-3. **Murshudov 6-Stage Validation Protocol:** Sub-angstrom resolution criteria, ground-state occupancy verification (`occ = 1.00`), thermal B-factor audit (`B_z <= 3.0 sigma` and Tukey IQR fences), real-space density correlation (`RSCC >= 0.85`), and 70-cation metal screening.
-4. **Refinement Restraints:** AceDRG and REFMAC5 external distance restraints and Servalcat refinement configurations.
-5. **Python API and CLI Reference:** Command-line options (`carbox` and `carboxmol`) and `.cxl` macro scripting.
-6. **Master Manual and Golden Benchmarks:** `CARBOX_MASTER_MANUAL.md` with analytical benchmark records.
+   * **English (`docs/en/`):** Index, 3D Workbench & WebGL Studio, CLI, GROMACS MD Suite, Electron Density Maps, CXL Scripting, Python API, Citation.
+   * **Azerbaijani (`docs/az/`):** İcmal, 3D İş Masası və WebGL Studio, CLI, GROMACS MD Simulyasiya Paketi, Elektron Sıxlığı Xəritələri, CXL ilə Skriptləşdirmə, Python API, İstinad.
+   * **Hebrew (`docs/he/`):** מבוא, שולחן עבודה WebGL Studio, ממשק CLI, דינמיקה מולקולרית GROMACS, מפות צפיפות אלקטרונים, שפת תסריטי CXL, ממשק Python API, ציטוט מדעי.
+2. **3D Crystallography Workbench & WebGL Studio:** High-performance hardware-accelerated molecular graphics supporting over 100,000 atoms at 60 FPS, with secondary structure cartoons, CPK spheres, ribbons, and solvent surfaces.
+3. **Crystallographic Validation Suite:** MolProbity-style stereochemical audits, Ramachandran distributions, sidechain rotamers, steric clashscores, and covalent geometry RMSZ.
+4. **Real-Space Geometric Refinement:** Torsion-angle regularization and harmonic restraint minimization.
+5. **Bioinorganic Metal Coordination Engine:** Quantitative classification of 4-fold (tetrahedral, square planar) and 6-fold (octahedral) coordination spheres.
+6. **Protein-Ligand Interaction Profiling (PLI):** Automated detection of salt bridges, $\pi\text{--}\pi$ stacking, and hydrogen bonding networks.
+7. **Electron Density Map Viewing & Carving:** CCP4/MRC binary map decoding, dynamic $\sigma$-contour leveling, and localized real-space map carving around active sites.
+8. **GROMACS Molecular Dynamics Suite:** Automated 8-stage simulation pipelines from topology generation to production MD trajectories.
+9. **CarboxMol Crystallographic Language (CXL):** Domain-specific plain-text macro language for reproducible batch modeling.
+10. **Technical Reference Manual:** `CARBOXMOL_USER_MANUAL.md`.
 
 ## 3. Local Build Instructions
 
@@ -37,7 +41,3 @@ pip install -r docs/requirements.txt
 # 3. Build HTML documentation
 sphinx-build -b html docs docs/_build/html
 ```
-
-## 4. Private Code and Data Notice
-
-The core scientific calculation algorithms, 3D WebGL rendering engine, and raw crystallographic datasets reside in the private repositories of the [CarboxMol Organization](https://github.com/carboxmol) and [Project Carbox Organization](https://github.com/project-carbox). To request access for academic research or peer review, please contact [suleyman.hacizade1@gmail.com](mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20CarboxMol%20Private%20Data).

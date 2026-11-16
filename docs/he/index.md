@@ -45,7 +45,8 @@ carboxmol --version
 
 ---
 
-## 3. קישורים חיצוניים ומערכות קשורות
+## 3. סטודיו ומשאבים גרפיים
 
-לחישובים ותסריטי סקירה של מצבי פרוטונציה חריגים בספריות PDB רחבות, עיינו בתיעוד הייעודי של **Project Carbox**:
-[https://project-carbox.readthedocs.io/en/latest/](https://project-carbox.readthedocs.io/en/latest/)
+* **סטודיו WebGL אינטראקטיבי:** [https://carboxmol.github.io/studio.html](https://carboxmol.github.io/studio.html)
+* **אתר רשמי:** [https://carboxmol.github.io/](https://carboxmol.github.io/)
+* **מאגר קוד מקור:** [https://github.com/carboxmol/carboxmol](https://github.com/carboxmol/carboxmol)

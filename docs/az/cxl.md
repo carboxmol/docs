@@ -1,4 +1,4 @@
-# Carbox Kristalloqrafik Dili (CXL) ilə Skriptləşdirmə
+# CarboxMol Kristalloqrafik Dili (CXL) ilə Skriptləşdirmə
 
 **Makro Avtomatlaşdırması, Qrup Halında Modelləşdirmə və Təkrarolunan Tədqiqat**
 
@@ -6,7 +6,7 @@
 
 ## 1. CXL Giriş
 
-**Carbox Kristalloqrafik Dili (CXL)** CarboxMol daxilində avtomatlaşdırılmış molekulyar modelləşdirmə, koordinat manipulyasiyası və qrafik təsvirlərin generasiyası üçün yaradılmış deklarativ skript dilidir.
+**CarboxMol Kristalloqrafik Dili (CXL)** CarboxMol daxilində avtomatlaşdırılmış molekulyar modelləşdirmə, koordinat manipulyasiyası və qrafik təsvirlərin generasiyası üçün yaradılmış deklarativ skript dilidir.
 
 ```bash
 carboxmol script boru_xetti.cxl

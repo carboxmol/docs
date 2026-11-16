@@ -35,7 +35,9 @@ Suleiman M. Hajizadeh & Garib N. Murshudov (2026). *CarboxMol: Universal 3D Macr
 
 ---
 
-## Əlaqədar Layihələr
-1. **Project Carbox Sənədləşməsi:** Böyük verilənlər bazalarında karboksilat protonasiya hallarının aşkarlanması və kvant potensial enerji səthlərinin hesablanması üzrə Carbox kitabxanası üçün baxın: [https://project-carbox.readthedocs.io/en/latest/](https://project-carbox.readthedocs.io/en/latest/).
-2. Murshudov, G. N., et al. (2011). *REFMAC5 for the refinement of macromolecular crystal structures*. Acta Crystallogr. D Biol. Crystallogr., 67(4), 355–367.
-3. Yamashita, K., et al. (2021). *Cryo-EM model refinement using Servalcat*. Acta Crystallogr. D Struct. Biol., 77(10), 1282–1291.
+## Əlaqədar Elmi Ədəbiyyat
+1. Murshudov, G. N., et al. (2011). *REFMAC5 for the refinement of macromolecular crystal structures*. Acta Crystallogr. D Biol. Crystallogr., 67(4), 355–367.
+2. Yamashita, K., et al. (2021). *Cryo-EM model refinement using Servalcat*. Acta Crystallogr. D Struct. Biol., 77(10), 1282–1291.
+3. Agirre, J., et al. (2023). *The CCP4 suite: integrative software for macromolecular crystallography*. Acta Crystallogr. D Struct. Biol., 79(6), 449–461.
+4. Abraham, M. J., et al. (2015). *GROMACS: High performance molecular simulations through multi-level parallelism from laptops to supercomputers*. SoftwareX, 1–2, 19–25.
+5. Wojdyr, M. (2022). *GEMMI: a library for structural biology*. J. Appl. Crystallogr., 55(4), 1105–1112.

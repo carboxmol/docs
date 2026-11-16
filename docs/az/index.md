@@ -22,7 +22,7 @@
 * **Qeyri-Kovalent Qarşılıqlı Təsirlər (PLI):** Duz körpülərinin, $\pi\text{--}\pi$ stekinqin, kation--$\pi$ təsirlərinin və hidrogen rabitəsi şəbəkələrinin kəmiyyət analizi.
 * **Real Fəza Həndəsi Dəqiqləşdirməsi:** Torsion bucaqlarının və rabitə məsafələrinin nizamlanması və requlyarizasiyası.
 * **GROMACS Molekulyar Dinamika Paketi:** Topologiyanın generasiyası, solvasiya, ionlaşma, enerjinin minimallaşdırılması, NVT/NPT tarazlaşdırılması və istehsalat MD simulyasiyaları üçün avtomatlaşdırılmış boru xətti.
-* **Carbox Kristalloqrafik Dili (CXL):** Təkrarolunan skriptləşdirmə və avtomatlaşdırma dili (`.cxl`).
+* **CarboxMol Kristalloqrafik Dili (CXL):** Təkrarolunan skriptləşdirmə və avtomatlaşdırma dili (`.cxl`).
 * **Terminal CLI və Yerli Xidmət Serveri:** Birbaşa əmr sətri aləti (`carboxmol`) və yerli server demonu.
 
 ---
@@ -82,7 +82,8 @@ carboxmol metal struktur.pdb
 
 ---
 
-## 5. Əlaqədar Sistemlər
+## 5. Veb Studio və Qrafik Resurslar
 
-Böyük struktur verilənlər bazalarında anomal karboksilat protonasiya hallarının ($-\text{COOH} \cdots ^-\text{OOC}-$) yüksək məhsuldarlıqlı skrininqi üçün nəzərdə tutulmuş **Project Carbox** hesablama kitabxanasının sənədləri ayrılıqda təqdim olunur:
-[https://project-carbox.readthedocs.io/en/latest/](https://project-carbox.readthedocs.io/en/latest/)
+* **İnteraktiv WebGL Studio:** [https://carboxmol.github.io/studio.html](https://carboxmol.github.io/studio.html)
+* **Rəsmi Veb Portalı:** [https://carboxmol.github.io/](https://carboxmol.github.io/)
+* **Mənbə Kodu Repozitoriyası:** [https://github.com/carboxmol/carboxmol](https://github.com/carboxmol/carboxmol)

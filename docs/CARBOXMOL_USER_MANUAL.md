@@ -27,7 +27,7 @@
 7. [Non-Covalent Interactions & Protein-Ligand Profiling](#7-non-covalent-interactions--protein-ligand-profiling)
 8. [Electron Density Maps & Real-Space Carving](#8-electron-density-maps--real-space-carving)
 9. [GROMACS Molecular Dynamics Simulation Suite](#9-gromacs-molecular-dynamics-simulation-suite)
-10. [Carbox Crystallographic Language (CXL) Macro Automation](#10-carbox-crystallographic-language-cxl-macro-automation)
+10. [CarboxMol Crystallographic Language (CXL) Macro Automation](#10-carboxmol-crystallographic-language-cxl-macro-automation)
 11. [Command-Line Interface (CLI) & Local Server Operations](#11-command-line-interface-cli--local-server-operations)
 12. [Academic Citation & Ecosystem Interoperability](#12-academic-citation--ecosystem-interoperability)
 
@@ -212,7 +212,7 @@ results = pipe.run_full_pipeline("structure.pdb")
 
 ---
 
-## 10. Carbox Crystallographic Language (CXL) Macro Automation
+## 10. CarboxMol Crystallographic Language (CXL) Macro Automation
 
 CXL (`.cxl`) provides plain-text, scriptable macro automation for CarboxMol:
 
@@ -267,6 +267,7 @@ When utilizing CarboxMol in scientific investigations, cite:
 > **CarboxMol Structural Biology Platform**, v0.4.5.  
 > [https://carboxmol.readthedocs.io/en/latest/](https://carboxmol.readthedocs.io/en/latest/)
 
-### Ecosystem Links
-For algorithmic screening of anomalous carboxylate protonation states and low-barrier hydrogen bonds across large crystallographic archives, CarboxMol interoperates with **Project Carbox**. Documentation for Project Carbox is maintained separately at:  
-[https://project-carbox.readthedocs.io/en/latest/](https://project-carbox.readthedocs.io/en/latest/)
+### Online Resources & Source Code
+* **Interactive WebGL Studio:** [https://carboxmol.github.io/studio.html](https://carboxmol.github.io/studio.html)
+* **Official Web Portal:** [https://carboxmol.github.io/](https://carboxmol.github.io/)
+* **Source Repository:** [https://github.com/carboxmol/carboxmol](https://github.com/carboxmol/carboxmol)

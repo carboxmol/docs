@@ -6,7 +6,7 @@
 
 ## 1. מבוא ל-CXL
 
-**Carbox Crystallographic Language (CXL)** היא שפת תסריטים הצהרתית למידול מולקולרי, אימות מבנה והפקת איורים גרפיים באיכות גבוהה.
+**CarboxMol Crystallographic Language (CXL)** היא שפת תסריטים הצהרתית למידול מולקולרי, אימות מבנה והפקת איורים גרפיים באיכות גבוהה.
 
 ```bash
 carboxmol script pipeline.cxl
