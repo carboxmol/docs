@@ -100,7 +100,7 @@ myst_heading_anchors = 3
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['assets']
-html_extra_path = ['robots.txt']
+html_extra_path = ['robots.txt', 'a8f4c2e91b7d3065e4a1f9c82d6b0731.txt']
 html_title = 'CarboxMol Documentation'
 html_logo = 'assets/carboxmol_logo.png'
 html_favicon = 'assets/carboxmol_logo.png'
