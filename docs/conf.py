@@ -10,8 +10,8 @@ from pathlib import Path
 DOCS_DIR = Path(__file__).resolve().parent
 REPO_ROOT = DOCS_DIR.parent
 sys.path.insert(0, str(REPO_ROOT))
-if (REPO_ROOT / "carbox").exists():
-    sys.path.insert(0, str(REPO_ROOT / "carbox"))
+if (REPO_ROOT / "carboxmol").exists():
+    sys.path.insert(0, str(REPO_ROOT / "carboxmol"))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -43,21 +43,21 @@ sitemap_url_scheme = '{link}'
 # Global metadata for Search Engine Optimization (SEO / Google / Bing / Yandex)
 html_meta = {
     'google-site-verification': 'lbqn6nIPchEP3d12Vf4UQmQpyKhJ1Mzq-di2S-t3rF0',
-    'description': 'Official scientific documentation for CarboxMol & Carbox: Interactive 3D macromolecular crystallography workbench, GROMACS molecular dynamics studio, 2mFo-DFc electron density carving, anomalous carboxyl protonation, and Low-Barrier Hydrogen Bond (LBHB) discovery by Suleiman M Hajizadeh.',
-    'keywords': 'CarboxMol, CarboxMol Studio, Carbox, Macromolecular Crystallography, 3D Molecular Viewer, GROMACS MD, Low Barrier Hydrogen Bonds, LBHB, Suleiman Hajizadeh, Garib Murshudov, Servalcat, REFMAC5, PDB validation, carboxyl protonation, pKa shifts, PROPKA, electron density map, 2Fo-Fc, structural biology, bioinformatics',
+    'description': 'Official scientific documentation for CarboxMol: Interactive 3D macromolecular crystallography workbench, WebGL Studio, GROMACS molecular dynamics suite, 2mFo-DFc electron density carving, real-space refinement, and CXL macro scripting by Suleiman M Hajizadeh.',
+    'keywords': 'CarboxMol, CarboxMol Studio, Macromolecular Crystallography, 3D Molecular Viewer, GROMACS MD, Electron Density Map, 2Fo-Fc, CCP4, PDB validation, Real-space refinement, Metal coordination, CXL macro, Suleiman M Hajizadeh, Garib N Murshudov',
     'author': 'Suleiman M Hajizadeh',
     'robots': 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     'googlebot': 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     'bingbot': 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     'og:site_name': 'CarboxMol Documentation',
-    'og:title': 'CarboxMol & Carbox Documentation | 3D Macromolecular Crystallography & GROMACS Suite',
-    'og:description': 'Official trilingual (EN/AZ/HE) scientific documentation for CarboxMol & Carbox: 3D WebGL crystallography workbench, GROMACS simulations, electron density validation, and LBHB discovery.',
+    'og:title': 'CarboxMol Documentation | 3D Macromolecular Crystallography & GROMACS Suite',
+    'og:description': 'Official trilingual (EN/AZ/HE) scientific documentation for CarboxMol: 3D WebGL crystallography workbench, GROMACS simulations, electron density validation, and CXL scripting.',
     'og:type': 'website',
     'og:url': 'https://carboxmol.readthedocs.io/en/latest/',
     'og:image': 'https://carboxmol.github.io/assets/carboxmol_logo.png',
     'twitter:card': 'summary_large_image',
-    'twitter:title': 'CarboxMol & Carbox Documentation | 3D Macromolecular Crystallography & GROMACS Suite',
-    'twitter:description': 'Official scientific documentation for CarboxMol & Carbox: 3D crystallography workbench, GROMACS molecular dynamics, and LBHB validation.',
+    'twitter:title': 'CarboxMol Documentation | 3D Macromolecular Crystallography & GROMACS Suite',
+    'twitter:description': 'Official scientific documentation for CarboxMol: 3D crystallography workbench, GROMACS molecular dynamics, and electron density analysis.',
     'twitter:image': 'https://carboxmol.github.io/assets/carboxmol_logo.png',
 }
 
@@ -101,9 +101,9 @@ myst_heading_anchors = 3
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['assets']
 html_extra_path = ['robots.txt']
-html_title = 'CarboxMol & Carbox Documentation'
+html_title = 'CarboxMol Documentation'
 html_logo = 'assets/carboxmol_logo.png'
-html_favicon = 'assets/carbox_logo.png'
+html_favicon = 'assets/carboxmol_logo.png'
 
 html_theme_options = {
     'logo_only': False,

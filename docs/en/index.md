@@ -1,99 +1,105 @@
-# Carbox & CarboxMol Documentation
+# CarboxMol Documentation
 
-**Structural Identification of Anomalous Carboxyl Protonation States, Low-Barrier Hydrogen Bonds, and Microenvironment Dielectric Shielding in High-Resolution Macromolecular Crystal Structures**
+**Universal 3D Macromolecular Crystallography Workbench, Interactive WebGL Studio & GROMACS MD Simulation Suite**
 
-**Authors:** Suleiman M Hajizadeh & Garib N Murshudov  
+**Authors:** Suleiman M. Hajizadeh & Prof. Garib N. Murshudov  
 *Version:* 0.4.5  
-*Platform:* Carbox Computational Structural Biology Platform  
-\* *Corresponding author:* `suleyman.hacizade1@gmail.com`
+*Platform:* CarboxMol Structural Biology Platform  
+*Corresponding Author:* `suleyman.hacizade1@gmail.com`  
+*Official Web Studio:* [https://carboxmol.github.io/studio.html](https://carboxmol.github.io/studio.html)  
+*Documentation Portal:* [https://carboxmol.readthedocs.io/en/latest/](https://carboxmol.readthedocs.io/en/latest/)
 
 ---
 
-## Overview
+## 1. Overview
 
-**Carbox & CarboxMol** is a state-of-the-art computational biology and macromolecular crystallography suite designed to resolve one of structural biology's most persistent blind spots: anomalous carboxylate protonation ($-\text{COOH} \cdots ^-\text{OOC}-$) and Low-Barrier Hydrogen Bonds (LBHB, $d_{O\cdots O} \le 2.55\,\text{Å}$).
+**CarboxMol** is an open-source, universal 3D macromolecular crystallography workbench, real-space refinement engine, interactive WebGL visualization studio, and molecular dynamics simulation suite. It is engineered for crystallographers, biophysicists, and structural biologists who require rigorous atomic coordinate analysis, interactive electron density map carving, bioinorganic coordination geometry classification, and automated molecular dynamics workflows.
 
-The suite is divided into two focused systems:
-
-1. **`Carbox` (`carbox`)** — The high-throughput computational biology library:
-   - Automated screening and spatial proximity analysis of carboxyl pairs ($d_{O\cdots O} \le 3.20\,\text{Å}$).
-   - Water burial index ($d_w$) and microenvironment dielectric shielding ($\varepsilon_{\text{eff}} \approx 2-4$) estimation.
-   - Quantum-mechanical 1D potential energy surface (PES) and proton transfer simulation with forward, reverse ("əks ağız"), and bidirectional shuttle modes.
-   - Suspicious atom audit (`carbox.validate_atom`) with automated Carbox Refinement external distance restraints generation.
-   - Native, zero-dependency topological graph engine (`carbox.graph`).
-
-2. **`CarboxMol` (`carboxmol`)** — The 3D macromolecular crystallography workbench & modeling engine:
-   - High-performance atomic data model (`Structure`, `Model`, `Chain`, `Residue`, `Atom`).
-   - Transition and divalent metal coordination sphere analysis ($\text{Zn}^{2+}, \text{Mg}^{2+}, \text{Ca}^{2+}, \text{Fe}^{2+}/\text{Fe}^{3+}, \text{Mn}^{2+}, \text{Cu}^{2+}$) with 4-fold (tetrahedral, square planar) and 6-fold (octahedral) geometry classification.
-   - Native Carbox Crystallographic Language (`.CXL`) macro scripting engine.
-   - Real-space geometric regularization and refinement.
-   - WebGL 3D Studio and headless terminal CLI.
+### Core Capabilities
+* **Interactive 3D WebGL Studio & PWA:** High-performance hardware-accelerated molecular rendering supporting secondary structure cartoons, ribbons, sticks, CPK van der Waals spheres, transparent solvent-accessible surfaces, and clipping planes.
+* **Electron Density Map Viewing & Carving:** Native binary CCP4/MRC/DSym map reading, dynamic $\sigma$-contour level slicing, and real-space local map carving ($2mF_o - DF_c$ and $mF_o - DF_c$) around selected residues, ligands, and catalytic sites.
+* **Bioinorganic Metal Coordination Engine:** Automated detection and classification of transition and divalent metal coordination polyhedra ($\text{Zn}^{2+}, \text{Mg}^{2+}, \text{Ca}^{2+}, \text{Fe}^{2+}/\text{Fe}^{3+}, \text{Mn}^{2+}, \text{Cu}^{2+}$) into 4-fold (tetrahedral, square planar) and 6-fold (octahedral) geometries.
+* **Non-Covalent Interaction Analysis (PLI):** Quantitative detection of salt bridges, $\pi\text{--}\pi$ stacking, cation--$\pi$ interactions, and hydrogen bonding networks.
+* **Real-Space Geometric Refinement:** Torsion-angle and bond-distance regularization with iterative convergence reporting.
+* **GROMACS Molecular Dynamics Suite:** End-to-end automated pipelines for structure topology generation, solvation, ionization, energy minimization (steepest descent / conjugate gradient), NVT/NPT equilibrations, and production MD trajectories.
+* **Carbox Crystallographic Language (CXL):** Scriptable macro execution language for automated, reproducible batch modeling and structure manipulation.
+* **Headless Terminal CLI & Microservices Server:** Direct command-line utility (`carboxmol`) and local server daemon for structural workflows.
 
 ---
 
-## Installation
+## 2. Architecture & Data Model
+
+CarboxMol is built on a hierarchical, memory-efficient atomic data model:
+
+```text
+Structure (PDB/mmCIF Entry, Space Group, Unit Cell)
+  └── Model (NMR Ensemble or Crystallographic Alternate States)
+        └── Chain (Polypeptide, Nucleic Acid, Solvent, Heterogen)
+              └── Residue (Standard Amino Acid, Nucleotide, Ligand)
+                    └── Atom (Coordinates [x, y, z], B-Factor, Occupancy, Element)
+```
+
+### Module Organization
+* `carboxmol.model`: Core object hierarchy with spatial KD-tree indexing for neighbor searches.
+* `carboxmol.refine`: Real-space geometric refinement and stereochemical regularization engine.
+* `carboxmol.metal`: Polyhedral geometry classifier for metalloprotein active sites.
+* `carboxmol.pli`: Non-covalent protein-ligand and residue-residue contact network analyzer.
+* `carboxmol.cxl`: Interpreter and runtime environment for the `.CXL` scripting language.
+* `carboxmol.density`: Binary CCP4/MRC parser, isocontour surface generator, and map carver.
+* `carboxmol.simulation`: GROMACS pipeline orchestrator and parameter generator.
+
+---
+
+## 3. Installation
 
 ### Prerequisites
-- Python 3.9+ (tested through Python 3.14)
-- `gemmi` (crystallographic core library)
-- `numpy`, `scipy`
+* Python 3.9 through 3.14
+* C++17 compatible compiler (optional, for accelerated coordinate routines)
+* Node.js 18+ (for WebGL Studio build tools, optional)
 
-### Installing from Source
+### Standard Installation via Pip
 ```bash
-git clone https://github.com/project-carbox/carbox.git
-cd Carbox
+pip install carboxmol
+```
+
+### Installation from Source Repository
+```bash
+git clone https://github.com/carboxmol/carboxmol.git
+cd carboxmol
 pip install -e .
 ```
 
-### Verifying Installation
+### Verification
+Verify the installation by querying version metadata and running self-checks:
 ```bash
-python -c "import carbox, carboxmol; print('Carbox version:', carbox.__version__)"
-carbox --help
-carboxmol --help
+carboxmol --version
+python -c "import carboxmol; print('CarboxMol version:', carboxmol.__version__)"
 ```
 
 ---
 
-## References & Citation (2026)
+## 4. Quickstart: Launching the Workbench
 
-When using Carbox or CarboxMol in your academic or industrial research, please cite:
+To launch the interactive 3D WebGL studio with a specific PDB structure directly from your terminal:
 
-> **Suleiman M Hajizadeh & Garib N Murshudov (2026).**  
-> *Carbox & CarboxMol: Automated Identification, Quantum Simulation, and Refinement of Anomalous Carboxyl Protonation States in Macromolecular Crystallography.*  
-> Carbox Computational Structural Biology Platform.
+```bash
+# Fetch and open human carbonic anhydrase II (PDB: 4LGN) in default browser
+carboxmol 4LGN
+```
 
-### BibTeX
-```bibtex
-@article{Carbox2026,
-  author    = {{Suleiman M Hajizadeh & Garib N Murshudov}},
-  title     = {Structural Identification of Anomalous Carboxyl Protonation States, Low-Barrier Hydrogen Bonds, and Microenvironment Dielectric Shielding in High-Resolution Protein Crystal Structures},
-  journal   = {Carbox & CarboxMol Macromolecular Crystallography Suite},
-  year      = {2026},
-  publisher = {Carbox Computational Structural Biology Platform},
-  url       = {https://github.com/project-carbox/carbox}
-}
+To run a headless geometric validation on a local coordinate file:
+```bash
+carboxmol validate structure.pdb
+```
+
+To inspect metal coordination polyhedra:
+```bash
+carboxmol metal structure.pdb
 ```
 
 ---
 
-## Documentation Contents
+## 5. Ecosystem & Related Tools
 
-- **[Carbox Scientific Library](carbox.md)**
-  - Scientific formulations & $pK_a$ perturbation
-  - Spatial screening algorithms ($d_{O\cdots O} \le 3.20\,\text{Å}$)
-  - Quantum proton transfer & reverse mouth simulation
-  - Suspicious atom validation & restraint generation
-  - Native graph engine (`carbox.graph`)
-  - Python API Reference
-- **[CarboxMol Workbench & Modeling Engine](carboxmol.md)**
-  - Core atomic hierarchy
-  - Transition metal coordination & 4-fold geometry
-  - CXL macro scripting engine
-  - Real-space refinement
-  - Command-line interface
-- **[Carbox Refinement Restraints](restraints.md)**
-  - Restraint formatting (`exte dist`)
-  - ASH and GLH neutral carboxylate parameterization
-  - Carbox Refinement pipeline execution
-- **[Citation & Authorship](citation.md)**
-  - Full author affiliations and BibTeX / APA / RIS formats
+For algorithmic high-throughput screening of anomalous carboxylate protonation states ($-\text{COOH} \cdots ^-\text{OOC}-$) and low-barrier hydrogen bonds across large structural databases, CarboxMol integrates seamlessly with the pure computational library **Project Carbox**. Complete documentation for the Carbox library is available separately at:
+[https://project-carbox.readthedocs.io/en/latest/](https://project-carbox.readthedocs.io/en/latest/)

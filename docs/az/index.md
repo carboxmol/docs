@@ -1,84 +1,88 @@
-# Carbox və CarboxMol Sənədləşmə Portalı
+# CarboxMol Sənədləşməsi
 
-**Yüksək Ayırdetməli Makromolekulyar Kristal Strukturlarında Anomal Karboksil Protonlaşma Hallarının, Aşağı Maneəli Hidrogen Rabitələrinin (LBHB) və Mikro-mühit Dielektrik Ekranlaşmasının Struktur İdentifikasiyası**
+**Universal 3D Makromolekulyar Kristalloqrafiya İş Masası, İnteraktiv WebGL Studio və GROMACS MD Simulyasiya Paketi**
 
-**Müəlliflər:** Süleyman M. Hacızadə və Qərib N. Mürşüdov  
+**Müəlliflər:** Süleyman M. Hacızadə və Prof. Qərib N. Mürşüdov  
 *Versiya:* 0.4.5  
-*Platforma:* Carbox Hesablama Strukturlu Biologiya Platforması  
-\* *Əlaqədar müəllif:* `suleyman.hacizade1@gmail.com`
+*Platforma:* CarboxMol Hesablamalı Struktur Biologiya Platforması  
+*Əlaqədar Müəllif:* `suleyman.hacizade1@gmail.com`  
+*Rəsmi Web Studio:* [https://carboxmol.github.io/studio.html](https://carboxmol.github.io/studio.html)  
+*Sənədləşmə Portalı:* [https://carboxmol.readthedocs.io/en/latest/](https://carboxmol.readthedocs.io/en/latest/)
 
 ---
 
-## İcmal
+## 1. İcmal
 
-**Carbox və CarboxMol** struktur biologiyasında ən çətin təyin olunan problemlərdən birini — anomal karboksilat protonlaşmasını ($-\text{COOH} \cdots ^-\text{OOC}-$) və Aşağı Maneəli Hidrogen Rabitələrini (LBHB, $d_{O\cdots O} \le 2.55\,\text{Å}$) avtomatlaşdırılmış şəkildə aşkar edən və dəqiqləşdirən qabaqcıl hesablama biologiyası və kristallografiya paketidir.
+**CarboxMol** kristalloqraflar, biofiziklər və struktur bioloqları üçün hazırlanmış universal 3D makromolekulyar kristalloqrafiya iş masası, real fəza dəqiqləşdirmə (refinement) mühərriki, interaktiv WebGL vizuallaşdırma studiyası və molekulyar dinamika simulyasiya paketidir.
 
-Sistem iki əsas platformadan ibarətdir:
-
-1. **`Carbox` (`carbox`)** — Yüksək məhsuldarlıqlı elmi hesablama biologiyası kitabxanası:
-   - Karboksil cütlərinin fəza məsafələrinin avtomatik skrininqi ($d_{O\cdots O} \le 3.20\,\text{Å}$).
-   - Su basdırılma indeksi ($d_w$) və mikro-mühit dielektrik ekranlaşmasının ($\varepsilon_{\text{eff}} \approx 2-4$) təyini.
-   - Kvant-mexaniki 1D potensial enerji səthi (PES) və düzünə, əksinə ("əks ağız") və ikiistiqamətli proton ötürülmə simulyasiyası.
-   - Şübhəli atom auditi (`carbox.validate_atom`) və Carbox Refinement üçün avtomatik xarici məsafə məhdudiyyətləri (`exte dist`).
-   - Sıfır asılılıqlı, doğma topoqrafik qraf mühərriki (`carbox.graph`).
-
-2. **`CarboxMol` (`carboxmol`)** — 3D makromolekulyar kristallografiya mühiti və modelləşdirmə platforması:
-   - Yüksək sürətli atom məlumat modeli (`Structure`, `Model`, `Chain`, `Residue`, `Atom`).
-   - Keçid metallarının koordinasiya sferası analizi ($\text{Zn}^{2+}, \text{Mg}^{2+}, \text{Ca}^{2+}, \text{Fe}^{2+}/\text{Fe}^{3+}, \text{Mn}^{2+}, \text{Cu}^{2+}$) və 4-qat (tetrahedral, kvadrat planar) və 6-qat (oktahedral) həndəsə təyini.
-   - Doğma Carbox Kristallografik Dili (`.CXL`) makro skript mühərriki.
-   - Həqiqi fəza həndəsi nizamlanması və dəqiqləşdirilməsi (real-space refinement).
-   - İnteraktiv WebGL 3D Studiya və terminal CLI proqramı.
+### Əsas İmkanlar
+* **İnteraktiv 3D WebGL Studio və PWA:** 100,000-dən artıq atomu 60 FPS sürəti ilə render edən, karikatura lentləri (cartoon), çubuqlar (sticks), CPK sferaları və həlledici səthlərini dəstəkləyən aparat təminatlı mühərrik.
+* **Elektron Sıxlığı Xəritələrinin İzlənməsi və Kəsilməsi (Carving):** İkili CCP4/MRC/DSym xəritələrinin oxunması, dinamik $\sigma$-səviyyəli izokonturların çəkilməsi və seçilmiş qalıqlar ətrafında real fəzada yerli kəsmə ($2mF_o - DF_c$ və $mF_o - DF_c$).
+* **Bioqeyri-üzvi Metal Koordinasiya Mühərriki:** Keçid və ikivalentli metal ionlarının ($\text{Zn}^{2+}, \text{Mg}^{2+}, \text{Ca}^{2+}, \text{Fe}^{2+}/\text{Fe}^{3+}, \text{Mn}^{2+}, \text{Cu}^{2+}$) 4-qat (tetraedral, kvadrat planar) və 6-qat (oktaedral) koordinasiya həndəsəsinin avtomatik təsnifatı.
+* **Qeyri-Kovalent Qarşılıqlı Təsirlər (PLI):** Duz körpülərinin, $\pi\text{--}\pi$ stekinqin, kation--$\pi$ təsirlərinin və hidrogen rabitəsi şəbəkələrinin kəmiyyət analizi.
+* **Real Fəza Həndəsi Dəqiqləşdirməsi:** Torsion bucaqlarının və rabitə məsafələrinin nizamlanması və requlyarizasiyası.
+* **GROMACS Molekulyar Dinamika Paketi:** Topologiyanın generasiyası, solvasiya, ionlaşma, enerjinin minimallaşdırılması, NVT/NPT tarazlaşdırılması və istehsalat MD simulyasiyaları üçün avtomatlaşdırılmış boru xətti.
+* **Carbox Kristalloqrafik Dili (CXL):** Təkrarolunan skriptləşdirmə və avtomatlaşdırma dili (`.cxl`).
+* **Terminal CLI və Yerli Xidmət Serveri:** Birbaşa əmr sətri aləti (`carboxmol`) və yerli server demonu.
 
 ---
 
-## Quraşdırma
+## 2. Arxitektura və Məlumat Modeli
 
-### Tələblər
-- Python 3.9+ (Python 3.14 daxil olmaqla sınaqdan keçirilib)
-- `gemmi` (kristallografik nüvə kitabxanası)
-- `numpy`, `scipy`
+CarboxMol yaddaş baxımından optimal, iyerarxik məlumat modelinə əsaslanır:
+
+```text
+Structure (PDB/mmCIF Girişi, Fəza Qrupu, Elementar Qəfəs)
+  └── Model (NMR Ansamblı və ya Alternativ Hallar)
+        └── Chain (Polipeptid, Nuklein Turşusu, Həlledici, Liqand)
+              └── Residue (Standart Amin Turşusu, Nukleotid, Liqand)
+                    └── Atom (Koordinatlar [x, y, z], B-Faktor, Tutulma, Element)
+```
+
+---
+
+## 3. Quraşdırma
+
+### Pip vasitəsilə Quraşdırma
+```bash
+pip install carboxmol
+```
 
 ### Mənbə Kodundan Quraşdırma
 ```bash
-git clone https://github.com/project-carbox/carbox.git
-cd Carbox
+git clone https://github.com/carboxmol/carboxmol.git
+cd carboxmol
 pip install -e .
 ```
 
-### Quraşdırmanın Yoxlanılması
+### Yoxlama
 ```bash
-python -c "import carbox, carboxmol; print('Carbox versiyası:', carbox.__version__)"
-carbox --help
-carboxmol --help
+carboxmol --version
+python -c "import carboxmol; print('CarboxMol versiyası:', carboxmol.__version__)"
 ```
 
 ---
 
-## İstinad və Ədəbiyyat (2026)
+## 4. Sürətli Başlanğıc
 
-Tədqiqatlarınızda Carbox və ya CarboxMol paketindən istifadə etdikdə, zəhmət olmasa aşağıdakı elmi əsərə istinad edin:
+PDB kodunu daxil edərək 3D WebGL Studio-nu brauzerdə açmaq:
+```bash
+carboxmol 4LGN
+```
 
-> **Suleiman M Hajizadeh & Garib N Murshudov (2026).**  
-> *Carbox & CarboxMol: Automated Identification, Quantum Simulation, and Refinement of Anomalous Carboxyl Protonation States in Macromolecular Crystallography.*  
-> Molekulyar Biologiya İnstitutu, Bakı və MRC Molekulyar Biologiya Laboratoriyası, Kembric, Böyük Britaniya.
+Koordinat faylının həndəsi validasiyasını icra etmək:
+```bash
+carboxmol validate struktur.pdb
+```
 
-### BibTeX
-```bibtex
-@article{Carbox2026,
-  author    = {{Suleiman M Hajizadeh & Garib N Murshudov}},
-  title     = {Structural Identification of Anomalous Carboxyl Protonation States, Low-Barrier Hydrogen Bonds, and Microenvironment Dielectric Shielding in High-Resolution Protein Crystal Structures},
-  journal   = {Carbox & CarboxMol Macromolecular Crystallography Suite},
-  year      = {2026},
-  publisher = {Carbox Computational Structural Biology Platform},
-  url       = {https://github.com/project-carbox/carbox}
-}
+Metal koordinasiya sferasını təhlil etmək:
+```bash
+carboxmol metal struktur.pdb
 ```
 
 ---
 
-## Sənədləşmə Bölmələri
+## 5. Əlaqədar Sistemlər
 
-- **[Carbox Elmi Kitabxanası](carbox.md)**: Elmi prinsiplər, kvant proton ötürülməsi, şübhəli atom auditi və qraf mühərriki.
-- **[CarboxMol Modelləşdirmə Mühiti](carboxmol.md)**: Atom modeli, 4-qat metal koordinasiyası, CXL makroları və CLI.
-- **[Carbox Refinement və Carbox Refinement Xarici Məhdudiyyətləri](restraints.md)**: Məhdudiyyət formatı (`exte dist`), ASH/GLH parametrləri və Carbox Refinement icrası.
-- **[İstinad və Müəlliflik](citation.md)**: Rəsmi 2026 nəşr məlumatları, BibTeX, APA və RIS formatları.
+Böyük struktur verilənlər bazalarında anomal karboksilat protonasiya hallarının ($-\text{COOH} \cdots ^-\text{OOC}-$) yüksək məhsuldarlıqlı skrininqi üçün nəzərdə tutulmuş **Project Carbox** hesablama kitabxanasının sənədləri ayrılıqda təqdim olunur:
+[https://project-carbox.readthedocs.io/en/latest/](https://project-carbox.readthedocs.io/en/latest/)

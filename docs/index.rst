@@ -1,15 +1,15 @@
-.. Carbox & CarboxMol documentation master file
+.. CarboxMol documentation master file
 
-Carbox & CarboxMol Documentation
-=================================
+CarboxMol Documentation
+=======================
 
 .. image:: assets/carboxmol_logo.png
    :width: 160px
    :align: center
    :alt: CarboxMol Logo
 
-Structural Identification of Anomalous Carboxyl Protonation States, Low-Barrier Hydrogen Bonds, and Microenvironment Dielectric Shielding in High-Resolution Macromolecular Crystal Structures
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Universal 3D Macromolecular Crystallography Workbench, Interactive WebGL Studio & GROMACS MD Suite
+--------------------------------------------------------------------------------------------------
 
 **Authors:** Suleiman M. Hajizadeh & Prof. Garib N. Murshudov (2026)
 
@@ -23,9 +23,12 @@ Structural Identification of Anomalous Carboxyl Protonation States, Low-Barrier 
    :caption: English Documentation (en)
 
    en/index
-   en/carbox
-   en/carboxmol
-   en/restraints
+   en/workbench
+   en/cli
+   en/gromacs
+   en/density
+   en/cxl
+   en/api
    en/citation
 
 .. toctree::
@@ -33,9 +36,12 @@ Structural Identification of Anomalous Carboxyl Protonation States, Low-Barrier 
    :caption: Azərbaycan Sənədləşməsi (az)
 
    az/index
-   az/carbox
-   az/carboxmol
-   az/restraints
+   az/workbench
+   az/cli
+   az/gromacs
+   az/density
+   az/cxl
+   az/api
    az/citation
 
 .. toctree::
@@ -43,16 +49,16 @@ Structural Identification of Anomalous Carboxyl Protonation States, Low-Barrier 
    :caption: תיעוד עברית (he)
 
    he/index
-   he/carbox
-   he/carboxmol
-   he/restraints
+   he/workbench
+   he/cli
+   he/gromacs
+   he/density
+   he/cxl
+   he/api
    he/citation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Scientific Manuals & Memoranda
+   :caption: Technical Reference Manual
 
-   CARBOX_MASTER_MANUAL
-   CARBOX_CRYSTALLOGRAPHIC_VALIDATION_MEMORANDUM
-   CARBOX_KRISTALLOQRAFIK_DOGRVLAMA_MEMORANDUMU
-   CARBOX_CRYSTALLOGRAPHIC_VALIDATION_MEMORANDUM_HE
+   CARBOXMOL_USER_MANUAL

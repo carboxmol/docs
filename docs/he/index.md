@@ -1,77 +1,51 @@
-# תיעוד Carbox ו-CarboxMol (עברית)
+# תיעוד CarboxMol
 
-**זיהוי מבני של מצבי פרוטונציה חריגים בקרבוקסילטים, קשרי מימן בעלי מחסום נמוך (LBHB) ומיסוך דיאלקטרי של המיקרו-סביבה במבני גביש מקרו-מולקולריים ברזולוציה גבוהה**
+**שולחן עבודה קריסטלוגרפי תלת-ממדי, סטודיו WebGL אינטראקטיבי וחבילת סימולציות GROMACS MD**
 
-**מחברים:** סולימאן מ. חאג'יזאדה וגריב נ. מורשודוב  
+**מחברים:** סולימאן מ. חג'יזאדה ופרופ' גריב נ. מורשודוב  
 *גרסה:* 0.4.5  
-*פלטפורמה:* פלטפורמת Carbox לביולוגיה מבנית וחישובית  
-\* *דוא"ל להתכתבות:* `suleyman.hacizade1@gmail.com`
+*פלטפורמה:* פלטפורמת ביולוגיה מבנית CarboxMol  
+*אימייל מחבר מתכתב:* `suleyman.hacizade1@gmail.com`  
+*סטודיו רשמי ברשת:* [https://carboxmol.github.io/studio.html](https://carboxmol.github.io/studio.html)  
+*פורטל תיעוד:* [https://carboxmol.readthedocs.io/en/latest/](https://carboxmol.readthedocs.io/en/latest/)
 
 ---
 
-## סקירה כללית
+## 1. סקירה כללית
 
-חבילת התוכנה **Carbox & CarboxMol** מהווה מערכת מחשוב מתקדמת בביולוגיה מבנית וקריסטלוגרפיה מקרו-מולקולרית, שנועדה לפתור את אחת הסוגיות המורכבות ביותר: זיהוי ואימות של מצבי פרוטונציה חריגים של קרבוקסילטים ($-\text{COOH} \cdots ^-\text{OOC}-$) וקשרי מימן בעלי מחסום נמוך (LBHB, $d_{O\cdots O} \le 2.55\,\text{Å}$).
+**CarboxMol** היא פלטפורמת קוד פתוח מתקדמת עבור קריסטלוגרפיה מקרו-מולקולרית תלת-ממדית, עידון במרחב האמיתי (Real-Space Refinement), הדמיית WebGL מואצת בחומרה וסימולציות דינמיקה מולקולרית (MD) מבוססות GROMACS.
 
-המערכת מחולקת לשתי פלטפורמות מרכזיות:
-
-1. **`Carbox` (`carbox`)** — ספריית מחקר וחישוב מדעית:
-   - סינון וסריקה מרחבית אוטומטית של זוגות קרבוקסילטים קרובים ($d_{O\cdots O} \le 3.20\,\text{Å}$).
-   - חישוב מדד קבורת מים ($d_w$) והערכת מיסוך דיאלקטרי במיקרו-סביבה ($\varepsilon_{\text{eff}} \approx 2-4$).
-   - משטח אנרגיה פוטנציאלית (PES) קוונטי חד-ממדי וסימולציית העברת פרוטון בכיוון רגיל, הפוך ("פיות הפוכות") ודו-כיווני.
-   - ביקורת אטום חשוד (`carbox.validate_atom`) והפקת אילוצי מרחק חיצוניים עבור Carbox Refinement.
-   - מנוע גרפים טופולוגי עצמאי ללא תלויות חיצוניות (`carbox.graph`).
-
-2. **`CarboxMol` (`carboxmol`)** — סביבת עבודה, זיקוק גיאומטרי והדמיה תלת-ממדית:
-   - מודל נתונים אטומי מהיר (`Structure`, `Model`, `Chain`, `Residue`, `Atom`).
-   - ניתוח ספרת קואורדינציה של מתכות מעבר ומתכות דו-ערכיות ($\text{Zn}^{2+}, \text{Mg}^{2+}, \text{Ca}^{2+}, \text{Fe}^{2+}/\text{Fe}^{3+}, \text{Mn}^{2+}, \text{Cu}^{2+}$) וסיווג גיאומטרי 4-קואורדינטיבי (טטרהדרלי, ריבועי מישורי) ו-6-קואורדינטיבי (אוקטהדרלי).
-   - שפת סקריפטים ומאקרו ייעודית `.CXL` (Carbox Crystallographic Language).
-   - מנוע זיקוק במרחב הממשי (Real-Space Refinement) לתיקון עיוותים גיאומטריים.
-   - סטודיו תלת-ממדי מבוסס WebGL וממשק שורת פקודה (CLI).
+### יכולות ליבה
+* **סטודיו WebGL אינטראקטיבי ו-PWA:** תצוגת סרטים (Cartoon), כדורים ומקלות (Ball-and-stick), ספירות CPK ומשטחי ממס עבור מודלים המכילים מעל 100,000 אטומים ב-60 FPS.
+* **צפייה וחיתוך מפות צפיפות אלקטרונים (Carving):** קריאה של מפות בינאריות (CCP4/MRC/DSym), חיתוך איזו-קווי מתאר לפי סטיות תקן ($\sigma$), וגילוף מפה מקומי עבור אתרים קטליטיים ($2mF_o - DF_c$ ו-$mF_o - DF_c$).
+* **מנוע קואורדינציה של מתכות ביו-אי-אורגניות:** סיווג גאומטריות של יוני מתכת ($\text{Zn}^{2+}, \text{Mg}^{2+}, \text{Ca}^{2+}, \text{Fe}^{2+}/\text{Fe}^{3+}$) ל-4 תיאומים (טטרהדרלי, מישורי-מרובע) ו-6 תיאומים (אוקטהדרלי).
+* **ניתוח אינטראקציות לא-קוולנטיות (PLI):** זיהוי גשרי מלח, קשרי מימן, וערימת $\pi\text{--}\pi$.
+* **שפת תסריטים קריסטלוגרפית (CXL):** אוטומציה של תהליכי מידול באמצעות שפת מאקרו ייעודית (`.cxl`).
+* **ממשק שורת פקודה (CLI) ושרת מיקרו-שירותים:** כלי פקודה ישיר (`carboxmol`) לתהליכי עבודה מהירים.
 
 ---
 
-## התקנה
+## 2. התקנה
 
-### דרישות קדם
-- Python 3.9 ומעלה (נבדק ותואם עד Python 3.14)
-- `gemmi`
-- `numpy`, `scipy`
-
-### התקנה מקוד המקור
 ```bash
-git clone https://github.com/project-carbox/carbox.git
-cd Carbox
+pip install carboxmol
+```
+
+התקנה מתוך מאגר הקוד:
+```bash
+git clone https://github.com/carboxmol/carboxmol.git
+cd carboxmol
 pip install -e .
 ```
 
----
-
-## ציטוט מדעי רשמי (2026)
-
-בעת שימוש בחבילה במחקר אקדמי או תעשייתי, יש לצטט:
-
-> **Suleiman M Hajizadeh & Garib N Murshudov (2026).**  
-> *Carbox & CarboxMol: Automated Identification, Quantum Simulation, and Refinement of Anomalous Carboxyl Protonation States in Macromolecular Crystallography.*  
-> Carbox Computational Structural Biology Platform.
-
-### פורמט BibTeX
-```bibtex
-@article{Carbox2026,
-  author    = {{Suleiman M Hajizadeh & Garib N Murshudov}},
-  title     = {Structural Identification of Anomalous Carboxyl Protonation States, Low-Barrier Hydrogen Bonds, and Microenvironment Dielectric Shielding in High-Resolution Protein Crystal Structures},
-  journal   = {Carbox & CarboxMol Macromolecular Crystallography Suite},
-  year      = {2026},
-  publisher = {Carbox Computational Structural Biology Platform},
-  url       = {https://github.com/project-carbox/carbox}
-}
+אימות התקנה:
+```bash
+carboxmol --version
 ```
 
 ---
 
-## תוכן עניינים ומדריכים
+## 3. קישורים חיצוניים ומערכות קשורות
 
-- **[ספריית Carbox המדעית](carbox.md)**: יסודות מדעיים, סימולציית העברת פרוטון, ביקורת אטומים ומנוע גרפים.
-- **[סביבת העבודה CarboxMol](carboxmol.md)**: מודל אטומי, תיאום מתכות 4-קואורדינטיביות, סקריפטים CXL ו-CLI.
-- **[אילוצי עידון חיצוניים ל-Carbox Refinement ו-Carbox Refinement](restraints.md)**: תחביר אילוצים, פרוטונציה מפורשת (ASH/GLH) וזיקוק.
-- **[ציטוט והפניות](citation.md)**: פרטי ציטוט מלאים לשנת 2026, פורמטי BibTeX, APA ו-RIS.
+לחישובים ותסריטי סקירה של מצבי פרוטונציה חריגים בספריות PDB רחבות, עיינו בתיעוד הייעודי של **Project Carbox**:
+[https://project-carbox.readthedocs.io/en/latest/](https://project-carbox.readthedocs.io/en/latest/)
